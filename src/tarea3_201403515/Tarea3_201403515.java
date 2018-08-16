@@ -28,20 +28,18 @@ public class Tarea3_201403515 {
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
-                switch (opcion) {
-                   case 2:
-                        System.out.println("1.Ingresar Usuarios");
-                       break;
-                    case 5:
-                        System.exit(0);
-                       break;
-                    default:
-                        ingresarUsuario();
-                }
+                ingresarUsuario();
                 break;
             case 2:
-                System.out.println("1sdsaasa.");
+                contadordigitos();
                 break;
+            case 3:
+                tresnumeros();
+                break;   
+             case 4:
+                promedio();
+                break;       
+                
             case 5:
                 System.exit(0);
                 break;
@@ -54,18 +52,19 @@ public class Tarea3_201403515 {
         int opcion;
         opcion = 0;
         Scanner entrada = new Scanner(System.in);
-         System.out.println("----------------------------------");
+        System.out.println("----------------------------------");
         System.out.println("1.Ingresar Usuarios");
         System.out.println("2.Mostrar Usuarios Ascendentes");
         System.out.println("3.Mostrar Usuarios Descendentes");
         System.out.println("4.Menu Principal");
-         System.out.println("----------------------------------");
+        System.out.println("----------------------------------");
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
                 System.out.println("Ingrese los usuarios");
-            break;
-            
+                
+                break;
+
             case 4:
                 menuPrincipal();
                 break;
@@ -73,40 +72,91 @@ public class Tarea3_201403515 {
                 ingresarUsuario();
         }
     }
-    
-    
-    
-    public static void contadordigitos(){
+
+    public static void contadordigitos() {
         int opcion;
         opcion = 0;
         Scanner entrada = new Scanner(System.in);
-         System.out.println("----------------------------------");
+        System.out.println("----------CONTADOR DE DIGITOS REPETIDOS------------------------");
         System.out.println("1.Ingresar Numero");
         System.out.println("2.Ingresar Numero a Buscar");
         System.out.println("3.Mostrar Numero de Digitos");
         System.out.println("4.Menu Principal");
-         System.out.println("----------------------------------");
+        System.out.println("----------------------------------");
         opcion = entrada.nextInt();
-          switch (opcion) {
-         case 1:         
-          switch (opcion) {
-                case 2:
-                        System.out.println("1.Ingrese un Numero");
-                       break;
-                   
-                 //   default:
-                      //  contadordigitos();
-                }
+        switch (opcion) {
+            case 1:
+                 System.out.println("1.Ingrese un Numero");
             break;
-            
+                                   
             case 4:
                 menuPrincipal();
-                break;
-            
+            break;
+
             default:
                 contadordigitos();
-        
+
+        }
+
     }
 
-}
+    public static void tresnumeros(){
+          int opcion;
+        opcion = 0;
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("----------------------------------");
+        System.out.println("1.Ingresar Numeros");
+        System.out.println("2.Mostrar ordenados");
+        System.out.println("4.Menu Principal");
+        System.out.println("----------------------------------");
+        opcion = entrada.nextInt();
+        switch (opcion) {
+            case 1:
+                 System.out.println("1.Ingrese un Numeros");
+            break;
+                                   
+            case 4:
+                menuPrincipal();
+            break;
+
+            default:
+                tresnumeros();
+        
+         }
+    }
+    
+    public static void promedio(){
+          int opcion;
+        opcion = 0;
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("----------------------------------");
+        System.out.println("1.Ingrese su Id");
+        System.out.println("2.Ingresar notas");
+        System.out.println("3.Menu Principal");
+        System.out.println("----------------------------------");
+        opcion = entrada.nextInt();
+        switch (opcion) {
+            case 1:
+                 System.out.println("1.Igrese sus notas:");
+                    
+            break;
+                                   
+            case 3:
+                menuPrincipal();
+            break;
+
+            default:
+                promedio();
+        
+         }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+
 }
