@@ -30,7 +30,7 @@ public class Tarea3_201403515 {
             case 1:
                 switch (opcion) {
                    case 2:
-                        System.out.println("1.Ingresar Usuarioswewqewqeqwq");
+                        System.out.println("1.Ingresar Usuarios");
                        break;
                     case 5:
                         System.exit(0);
@@ -94,8 +94,8 @@ public class Tarea3_201403515 {
                         System.out.println("1.Ingrese un Numero");
                        break;
                    
-                    default:
-                        contadordigitos();
+                 //   default:
+                      //  contadordigitos();
                 }
             break;
             
