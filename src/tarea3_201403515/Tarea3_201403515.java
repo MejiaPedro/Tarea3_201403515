@@ -61,12 +61,35 @@ public class Tarea3_201403515 {
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
-                System.out.println("Ingrese los usuarios");
+                Scanner lector = new Scanner(System.in);              
+                String []arreglo = new String[5];
+                        
+                String usuarios;
                 
+                for (int i=0;i<arreglo.length;i++){
+                    
+                     System.out.println("Ingrese los Usuarios:");
+                     usuarios = lector.nextLine();
+                     
+                      for(int i= 0;i<arreglo.length;i++){
+                          
+                      }
+                     
+                       if (usuarios == arreglo[i]){
+                           System.out.println("el usuarios ya se ingreso:");
+                      
+                }
+                arreglo[i]=usuarios;
+                }
+                       for(int i=0;i<arreglo.length;i++){
+                        System.out.println("los usuarios son:"+arreglo[i]);
+               }
+                
+               
                 break;
-
-            case 4:
-                menuPrincipal();
+            case 3:
+           
+                  
                 break;
             default:
                 ingresarUsuario();
@@ -75,6 +98,7 @@ public class Tarea3_201403515 {
 
     public static void contadordigitos() {
         int opcion;
+        int numero =0;
         opcion = 0;
         Scanner entrada = new Scanner(System.in);
         System.out.println("----------CONTADOR DE DIGITOS REPETIDOS------------------------");
@@ -82,12 +106,20 @@ public class Tarea3_201403515 {
         System.out.println("2.Ingresar Numero a Buscar");
         System.out.println("3.Mostrar Numero de Digitos");
         System.out.println("4.Menu Principal");
-        System.out.println("----------------------------------");
+        System.out.println("----------CONTADOR DE DIGITOS REPETIDOS------------------------");
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
                  System.out.println("1.Ingrese un Numero");
-            break;
+                 int cifraingresada = entrada.nextInt();
+       
+       String num = Integer.toString(cifraingresada);
+       System.out.println("El numero: "+cifraingresada+ " posee "+ num.length()+" digitos");
+                 
+                 
+                 
+                 
+                 break;
                                    
             case 4:
                 menuPrincipal();
