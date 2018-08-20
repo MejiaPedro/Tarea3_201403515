@@ -8,6 +8,8 @@ import java.util.Scanner;
  */
 public class Tarea3_201403515 {
 
+    public static String[] arreglo = new String[5];
+
     public static void main(String[] args) {
         //Tarea3_201403515 t3 = new Tarea3_201403515();
         menuPrincipal();
@@ -35,11 +37,11 @@ public class Tarea3_201403515 {
                 break;
             case 3:
                 tresnumeros();
-                break;   
-             case 4:
+                break;
+            case 4:
                 promedio();
-                break;       
-                
+                break;
+
             case 5:
                 System.exit(0);
                 break;
@@ -61,35 +63,67 @@ public class Tarea3_201403515 {
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
-                Scanner lector = new Scanner(System.in);              
-                String []arreglo = new String[5];
-                        
+                Scanner lector = new Scanner(System.in);
+                //arreglo = new String[5];
+
                 String usuarios;
-                
-                for (int i=0;i<arreglo.length;i++){
-                    
-                     System.out.println("Ingrese los Usuarios:");
-                     usuarios = lector.nextLine();
-                     
-                      for(int i= 0;i<arreglo.length;i++){
-                          
-                      }
-                     
-                       if (usuarios == arreglo[i]){
-                           System.out.println("el usuarios ya se ingreso:");
-                      
+
+                for (int i = 0; i < arreglo.length; i++) {
+                    System.out.println("Ingrese los Usuarios:");
+                    usuarios = lector.nextLine();
+                    arreglo[i] = usuarios;
+                    if (i != 0) {
+                        for (int z = 0; z < i; z++) {
+                            if (arreglo[i].equals(arreglo[z])) {
+                                System.out.println("\nusuario repetido: " + arreglo[z]);
+                                System.out.println("Ingrese otro usuario Distinto:");
+                                usuarios = lector.nextLine();
+                                arreglo[i] = usuarios;
+
+                            }
+                        }
+                    }
+
                 }
-                arreglo[i]=usuarios;
-                }
-                       for(int i=0;i<arreglo.length;i++){
-                        System.out.println("los usuarios son:"+arreglo[i]);
-               }
-                
-               
+
+                ingresarUsuario();
+
                 break;
+
+            case 2:
+                if (arreglo[1] == "") {
+                    System.out.println("sin datos ingrese un nombre");
+                } else {
+                    //arreglo[i] = usuarios;
+
+                    for (int i = 4; i >= 0; i--) {
+                        System.out.println("los usuarios son:" + arreglo[i]);
+
+                    }
+                }
+
+                ingresarUsuario();
+
+                break;
+
             case 3:
-           
-                  
+                if (arreglo[1] == "") {
+                    System.out.println("sin datos ingrese un nombre");
+                } else {
+
+                    //arreglo[i] = usuarios;
+                    for (int i = 0; i < arreglo.length; i++) {
+                        System.out.println("los usuarios son:" + arreglo[i]);
+
+                    }
+
+                }
+
+                ingresarUsuario();
+                break;
+
+            case 4:
+                menuPrincipal();
                 break;
             default:
                 ingresarUsuario();
@@ -98,7 +132,7 @@ public class Tarea3_201403515 {
 
     public static void contadordigitos() {
         int opcion;
-        int numero =0;
+        int numero = 0;
         opcion = 0;
         Scanner entrada = new Scanner(System.in);
         System.out.println("----------CONTADOR DE DIGITOS REPETIDOS------------------------");
@@ -110,20 +144,19 @@ public class Tarea3_201403515 {
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
-                 System.out.println("1.Ingrese un Numero");
-                 int cifraingresada = entrada.nextInt();
-       
-       String num = Integer.toString(cifraingresada);
-       System.out.println("El numero: "+cifraingresada+ " posee "+ num.length()+" digitos");
-                 
-                 
-                 
-                 
-                 break;
-                                   
+                System.out.println("1.Ingrese un Numero");
+                int cifraingresada = entrada.nextInt();
+
+                String num = Integer.toString(cifraingresada);
+                System.out.println("El numero: " + cifraingresada + " posee " + num.length() + " digitos");
+
+                contadordigitos();
+
+                break;
+
             case 4:
                 menuPrincipal();
-            break;
+                break;
 
             default:
                 contadordigitos();
@@ -132,8 +165,8 @@ public class Tarea3_201403515 {
 
     }
 
-    public static void tresnumeros(){
-          int opcion;
+    public static void tresnumeros() {
+        int opcion;
         opcion = 0;
         Scanner entrada = new Scanner(System.in);
         System.out.println("----------------------------------");
@@ -144,21 +177,21 @@ public class Tarea3_201403515 {
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
-                 System.out.println("1.Ingrese un Numeros");
-            break;
-                                   
+                System.out.println("1.Ingrese un Numeros");
+                break;
+
             case 4:
                 menuPrincipal();
-            break;
+                break;
 
             default:
                 tresnumeros();
-        
-         }
+
+        }
     }
-    
-    public static void promedio(){
-          int opcion;
+
+    public static void promedio() {
+        int opcion;
         opcion = 0;
         Scanner entrada = new Scanner(System.in);
         System.out.println("----------------------------------");
@@ -169,26 +202,18 @@ public class Tarea3_201403515 {
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
-                 System.out.println("1.Igrese sus notas:");
-                    
-            break;
-                                   
+                System.out.println("1.Igrese sus notas:");
+
+                break;
+
             case 3:
                 menuPrincipal();
-            break;
+                break;
 
             default:
                 promedio();
-        
-         }
+
+        }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 
 }
