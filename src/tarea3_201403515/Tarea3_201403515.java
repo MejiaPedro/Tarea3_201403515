@@ -180,8 +180,34 @@ public class Tarea3_201403515 {
         System.out.println("----------------------------------");
         opcion = entrada.nextInt();
         switch (opcion) {
+
             case 1:
-                System.out.println("1.Ingrese un Numeros");
+                Scanner numeros = new Scanner(System.in);
+
+                int tresnumeros[] = new int[3];
+
+                System.out.println("Ingrese el primer numero:");
+
+                tresnumeros[0] = numeros.nextInt();
+                System.out.println("Ingrese el segundo numero:");
+                tresnumeros[1] = numeros.nextInt();
+
+                System.out.println("Ingrese el tercer numero:");
+                tresnumeros[2] = numeros.nextInt();
+
+                System.out.println("********LOS NUMEROS ORDENADOS SON:*********");
+
+                System.out.println("Ingrese el tercer numero:" + tresnumeros[0]);
+                System.out.println("Ingrese el tercer numero:" + tresnumeros[1]);
+                System.out.println("Ingrese el tercer numero:" + tresnumeros[2]);
+
+                System.out.println("********LOS NUMEROS ORDENADOS SON:*********");
+
+                tresnumeros();
+
+                break;
+            case 2:
+                tresnumeros();
                 break;
 
             case 4:
@@ -200,7 +226,7 @@ public class Tarea3_201403515 {
         Scanner entrada = new Scanner(System.in);
         System.out.println("----------------------------------");
         System.out.println("1.Ingrese su Id");
-        
+
         System.out.println("3.Menu Principal");
         System.out.println("----------------------------------");
         opcion = entrada.nextInt();
@@ -209,41 +235,39 @@ public class Tarea3_201403515 {
                 Scanner leer = new Scanner(System.in);
 
                 int notas[] = new int[6];
-                int suma =0;
+                int suma = 0;
                 float promedio;
 
-                  System.out.println("Ingrese su ID:");
-                notas[0] = leer.nextInt();
-        
+                //  System.out.println("Ingrese su ID:");
+                //notas[0] = leer.nextInt();
                 System.out.println("---------------NOTAS DE CURSOS----------------:");
-                
+
                 System.out.println("Ingrese su nota 1:");
 
-                notas[1] = leer.nextInt();
+                notas[0] = leer.nextInt();
                 System.out.println("Ingrese su nota 2:");
-                notas[2] = leer.nextInt();
+                notas[1] = leer.nextInt();
 
                 System.out.println("Ingrese su nota 3:");
-                notas[3] = leer.nextInt();
+                notas[2] = leer.nextInt();
 
                 System.out.println("Ingrese su nota 4:");
-                notas[4] = leer.nextInt();
-                
-                for(int i=0; i<notas.length; i++){
-                    suma+=notas[i];
-                 }
+                notas[3] = leer.nextInt();
 
-                promedio=(suma/notas.length);
-                System.out.println("El promedio de las notas ingresadas son:" + promedio );
-                
-                if(promedio>=70){
-                    System.out.println("felicidades ud es un buen estudiante" );
+                for (int i = 0; i < notas.length; i++) {
+
+                    suma += notas[i];
                 }
-                else{
-                    System.out.println("ud es bien estupido");
+
+                promedio = (suma / notas.length);
+                System.out.println("El promedio de las notas ingresadas son:" + promedio + notas.length);
+
+                if (promedio >= 70) {
+                    System.out.println("felicidades ud es un buen estudiante");
+                } else {
+                    System.out.println("Ingrese de nuevo sus datos");
                 }
-                    
-                    
+                promedio();
                 break;
 
             case 3:
