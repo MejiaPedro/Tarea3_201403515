@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Tarea3_201403515 {
 
     public static String[] arreglo = new String[5];
+    //  public static int[] arreglo = new String[6];
 
     public static void main(String[] args) {
         //Tarea3_201403515 t3 = new Tarea3_201403515();
@@ -132,20 +133,23 @@ public class Tarea3_201403515 {
 
     public static void contadordigitos() {
         int opcion;
-        int numero = 0;
+        // int numero = 0;
         opcion = 0;
         Scanner entrada = new Scanner(System.in);
+
         System.out.println("----------CONTADOR DE DIGITOS REPETIDOS------------------------");
         System.out.println("1.Ingresar Numero");
         System.out.println("2.Ingresar Numero a Buscar");
-        System.out.println("3.Mostrar Numero de Digitos");
+        //  System.out.println("3.Mostrar Numero de Digitos");
         System.out.println("4.Menu Principal");
         System.out.println("----------CONTADOR DE DIGITOS REPETIDOS------------------------");
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
+
+                Scanner digito = new Scanner(System.in);
                 System.out.println("1.Ingrese un Numero");
-                int cifraingresada = entrada.nextInt();
+                int cifraingresada = digito.nextInt();
 
                 String num = Integer.toString(cifraingresada);
                 System.out.println("El numero: " + cifraingresada + " posee " + num.length() + " digitos");
@@ -196,14 +200,50 @@ public class Tarea3_201403515 {
         Scanner entrada = new Scanner(System.in);
         System.out.println("----------------------------------");
         System.out.println("1.Ingrese su Id");
-        System.out.println("2.Ingresar notas");
+        
         System.out.println("3.Menu Principal");
         System.out.println("----------------------------------");
         opcion = entrada.nextInt();
         switch (opcion) {
             case 1:
-                System.out.println("1.Igrese sus notas:");
+                Scanner leer = new Scanner(System.in);
 
+                int notas[] = new int[6];
+                int suma =0;
+                float promedio;
+
+                  System.out.println("Ingrese su ID:");
+                notas[0] = leer.nextInt();
+        
+                System.out.println("---------------NOTAS DE CURSOS----------------:");
+                
+                System.out.println("Ingrese su nota 1:");
+
+                notas[1] = leer.nextInt();
+                System.out.println("Ingrese su nota 2:");
+                notas[2] = leer.nextInt();
+
+                System.out.println("Ingrese su nota 3:");
+                notas[3] = leer.nextInt();
+
+                System.out.println("Ingrese su nota 4:");
+                notas[4] = leer.nextInt();
+                
+                for(int i=0; i<notas.length; i++){
+                    suma+=notas[i];
+                 }
+
+                promedio=(suma/notas.length);
+                System.out.println("El promedio de las notas ingresadas son:" + promedio );
+                
+                if(promedio>=70){
+                    System.out.println("felicidades ud es un buen estudiante" );
+                }
+                else{
+                    System.out.println("ud es bien estupido");
+                }
+                    
+                    
                 break;
 
             case 3:
